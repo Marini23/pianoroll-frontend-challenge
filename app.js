@@ -94,38 +94,14 @@ function onClick(e) {
 
   // Clone the selected parentRoll and add it to the container
   const clonedRoll = parentRoll.cloneNode(true);
+  const selectedSvg = clonedRoll.querySelector(".piano-roll-svg");
+  // console.log(selectedSvg);
+  // pianoRollSelectedContainer.appendChild(clonedRoll);
   pianoRollSelectedContainer.appendChild(clonedRoll);
 
   rollsList.classList.add("play-container");
   rollsList.classList.remove("container");
   rightRollBar.classList.add("roll-list-container");
   rightRollBar.classList.remove("rollList");
+  selectedSvg.classList.add("selectedSvg");
 }
-
-// Function to handle drag events
-function dragstarted(event, d) {
-  // Get the initial mouse position
-  d3.select(this).raise().attr("stroke", "black");
-  d3.select(".piano-roll-svg").on("mousemove", dragged);
-}
-
-function dragged(event, d) {
-  // Get the current mouse position
-  // Update the selection visually as the user drags
-  // For example, change the color of the selected area or extend the selection
-  // This part may vary based on how you want to visually represent the selection
-
-  // Example: changing color on drag
-  d3.select(this).attr("fill", "red");
-}
-
-function dragended(event, d) {
-  console.log("y");
-  d3.select(this).attr("stroke", null);
-  d3.select(".piano-roll-svg").on("mousemove", null);
-}
-
-// Using D3 to attach drag events to the rectangles (assuming the rectangles represent the notes)
-d3.selectAll(".note-rectangle").call(
-  d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended)
-);

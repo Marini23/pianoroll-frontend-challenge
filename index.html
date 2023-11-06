@@ -12,7 +12,6 @@
     />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.svg" />
-
     <title>PianoRoll</title>
   </head>
   <body>
@@ -29,14 +28,22 @@
       <div id="buttonContainer">
         <button id="loadCSV">Load Piano Rolls!</button>
       </div>
+      <!-- <midi-player
+        src="https://magenta.github.io/magenta-js/music/demos/melody.mid"
+        sound-font
+        visualizer="#myVisualizer"
+      >
+      </midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizer"> </midi-visualizer> -->
 
       <div id="pianoRollContainer" class="container">
         <div class="selectedRoll"></div>
         <div id="list" class="rollList"></div>
       </div>
     </main>
+
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="app.js" type="module"></script>
-    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+    <script src="drag.js" type="module"></script>
   </body>
 </html>

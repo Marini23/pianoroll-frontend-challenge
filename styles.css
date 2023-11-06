@@ -37,7 +37,6 @@ body {
 }
 
 .play-container {
-  /* max-width: 1200px; */
   margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
@@ -66,7 +65,7 @@ body {
 
 h1 {
   margin-bottom: 20px;
-  font-size: 42px;
+  font-size: 30px;
 }
 
 button {
@@ -104,7 +103,7 @@ button:hover {
   border: 1px solid #ccc;
   margin-bottom: 10px;
   padding: 10px;
-  /* width: 50%; */
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -131,11 +130,20 @@ button:hover {
     width: 768px;
   }
   .container {
+    width: 768px;
+  }
+  .rollList {
+    display: grid;
     grid-template-columns: auto auto;
   }
 
   .play-container {
     flex-wrap: nowrap;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 42px;
   }
 }
 
@@ -145,6 +153,10 @@ button:hover {
   }
 
   .container {
+    width: 1200px;
+  }
+  .rollList {
+    display: grid;
     grid-template-columns: auto auto auto;
   }
 }
